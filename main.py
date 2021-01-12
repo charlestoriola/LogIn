@@ -1,4 +1,4 @@
 from Functions.functions import *
 
 
-signUp()
+sign_up()

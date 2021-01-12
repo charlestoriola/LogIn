@@ -1,21 +1,13 @@
 import getpass
 
-def fileExists(filename):
-	try:
-    	f = open(filename)
-	except IOError:
-    	
-	finally:
-    	f.close()
-
-def whitespaceRemove(word):
+def whitespace_remove(word):
 	whitespace = word.count(' ')
 	if(' ' in word):
 		for whitespace in word:
 			word = "".join(word.split())
 	return word
 
-def signUp():
+def sign_up():
 	choice = ''
 
 	username = ""
@@ -25,7 +17,7 @@ def signUp():
 
 
 		if (' ' in username):
-			newusername = whitespaceRemove(username)
+			newusername = whitespace_remove(username)
 			
 			print("\nYou left some spaces there")
 			choice = input("Would you like to enter your username again?(Y/N) ")
@@ -38,6 +30,9 @@ def signUp():
 			break
 
 	password = getpass.getpass()
-	print(password)
 
-	username_file = open('usernames.bin', "r")
+	username_file = open('usernames.bin', "w")
+	password_file = open('password.bin', "w")
+
+	username_file.write(username)
+	password_file.write(password)
