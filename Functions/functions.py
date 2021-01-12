@@ -1,4 +1,12 @@
 import getpass
+import os.path
+
+# def create_file(filename):
+# 	try:
+# 		file = open(filename, "w")
+# 	except:
+# 		print("Error creating file")
+
 
 def whitespace_remove(word):
 	whitespace = word.count(' ')
@@ -31,8 +39,11 @@ def sign_up():
 
 	password = getpass.getpass()
 
-	username_file = open('usernames.bin', "w")
-	password_file = open('password.bin', "w")
+	username_file = open('Database/usernames.bin', "a+")
+	password_file = open('Database/password.bin', "a+")
 
-	username_file.write(username)
-	password_file.write(password)
+	username_file.write(username+"\n")
+	password_file.write(password+"\n")
+
+	username_file.close()
+	password_file.close()
