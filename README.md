@@ -1,1 +1,1 @@
-A program that allows user to log in o sign up
+A program that allows user to log in or sign up
